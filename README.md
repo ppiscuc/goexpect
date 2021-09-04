@@ -1,4 +1,6 @@
-This package is a fork of github.com/google/goexpect
+This package is a fork of [github.com/google/goexpect](https://github.com/google/goexpect)
+
+It implements expect in go.
 
 Changes:
 - simplified example
@@ -31,6 +33,8 @@ func runCommand(cmd string, args []string, tosend string) (string, error) {
 
 
 ```
+
+## What it does
 
 This package is an implementation of [Expect](https://en.wikipedia.org/wiki/Expect) in [Go](https://golang.org).
 
