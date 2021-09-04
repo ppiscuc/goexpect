@@ -12,3 +12,5 @@ require (
 	google.golang.org/grpc v1.31.0
 	honnef.co/go/tools v0.0.0-20190523083050-ea95bdfd59fc // indirect
 )
+
+replace github.com/google/goexpect => github.com/ppiscuc/goexpect 1.0.0

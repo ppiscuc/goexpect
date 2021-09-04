@@ -1,4 +1,36 @@
-[![CircleCI](https://circleci.com/gh/google/goexpect.svg?style=svg)](https://circleci.com/gh/google/goexpect)
+This package is a fork of github.com/google/goexpect
+
+Changes:
+- simplified example
+- better documentation of issues that can appear
+
+
+### How to use
+
+
+```go
+
+func runCommand(cmd string, args []string, tosend string) (string, error) {
+	timeout := 1 *time.Minute
+	e, _, err := expect.SpawnWithArgs([]string{cmd, args...}, -1)
+	if err != nil {
+		return "", err
+}
+	_, _, err := e.Expect(regexp.MustCompile("\\w+"), timeout)
+	if err != nil {
+		return "", err
+}
+	e.Send(tosend + "\n")
+	result, _, err := e.Expect(regex.MustCompile("other-expect"), timeout)
+	if err != nil {
+		return"", err
+}
+	realResult := strings.TrimSpace(result)
+	return result, nil
+}
+
+
+```
 
 This package is an implementation of [Expect](https://en.wikipedia.org/wiki/Expect) in [Go](https://golang.org).
 
